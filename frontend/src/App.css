@@ -1,0 +1,33 @@
+:root {
+  /*--dark: #101326;*/
+  --gradient: black;
+  --dark: #140021;
+  --lightdark: #181240;
+  --primary: #9D00FF;
+  --darkprimary: rgba(157, 0, 255, 0.44);
+  --text: white;
+  --color4: #F20775;
+  --color5: #F2075D;
+}
+
+body {
+    background-image: linear-gradient(45deg, var(--dark), var(--gradient));
+}
+
+
+
+.btn{
+  border-radius: 1rem;
+  background-color: var(--primary);
+  color: var(--text);
+  border: none;
+  padding: 0.8rem 1.1rem;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.btn:hover{
+  transform: translateY(-3px);
+  background-color: var(--primary);
+  color: var(--text);
+}

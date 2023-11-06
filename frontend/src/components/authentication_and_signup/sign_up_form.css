@@ -1,0 +1,56 @@
+.authenticate-form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 20rem;
+    /*border: 1px solid var(--primary);*/
+    border-radius: 0.5rem;
+    padding: 2rem 1rem;
+    
+}
+
+.authenticate-form-title{
+    color: var(--text);
+    margin: 1rem 1rem;
+}
+
+.authenticate-form-field::placeholder {
+    color: gray;
+}
+
+.authenticate-form-field{
+    border-radius: 0.3rem;
+    margin: 0.5rem 0.5rem;
+    border: 1px solid var(--text);
+    background: none;
+    padding: 4px 6px;
+    color: gray;
+
+}
+
+.authenticate-form-button{
+    width: 7rem;
+    text-align: center;
+    margin-top: auto;     /* Added this line */
+    margin-bottom: auto;  /* Added this line */
+}
+
+.home-page-image{
+    max-width: 100%;
+    height: auto;
+    padding: 10px; /* This will be the width of your inner border */
+    box-shadow: inset 0 0 0 1px var(--primary);
+}
+
+.authenticate-form-login-link{
+    margin-left: 2rem;
+}
+
+.authenticate-form-login-link p{
+    color: var(--text);
+}
+
+.authenticate-form-login-link p a {
+    color: var(--primary);
+
+}

@@ -1,0 +1,5 @@
+.footer-copyright p{
+    color: var(--primary);
+    font-size: 0.8rem;
+    text-align: center;
+}

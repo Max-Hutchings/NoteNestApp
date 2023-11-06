@@ -1,0 +1,19 @@
+.navbar{
+    /*background-color: var(--dark);*/
+    color: var(--text);
+}
+
+.navbar-icon{
+    font-size: 2rem;
+}
+
+.navbar-icon-title{
+    text-decoration: none;
+    color: var(--text);
+    font-size: 2rem;
+
+}
+
+.navbar-icon-title a:hover{
+    color: var(--text);
+}
