@@ -1,5 +1,6 @@
 import "./navbar.css"
 import React, {useState, useContext} from "react";
+import { Link } from 'react-router-dom';
 import {useMediaQuery} from "react-responsive";
 import Create from '@mui/icons-material/Create';
 import NavbarAddons from "./navbar_addons/NavbarAddons";
@@ -21,14 +22,14 @@ function Navbar(){
     return(
         <nav className={"navbar navbar-expand-lg"}>
             <div className={"container-fluid"}>
-                <a className={"navbar-icon-title"} href={"/"}>
+                <Link className={"navbar-icon-title"} to={"/"}>
                     <Create
                         sx={{
                             fontSize: "2rem",
 
                         }}/>
                     NoteNest
-                </a>
+                </Link>
                 {isMobile ? (
                     <>
                         <MenuIcon onClick={toggleMobileMenu} />

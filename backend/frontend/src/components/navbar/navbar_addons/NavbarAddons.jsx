@@ -1,6 +1,7 @@
 import React from "react";
 import "./navbar_addons.css"
 import CloseIcon from '@mui/icons-material/Close';
+import { Link } from 'react-router-dom';
 
 function NavbarAddons(props){
 
@@ -12,21 +13,21 @@ function NavbarAddons(props){
         <div className={`navbar-navigation row ${props.mobileFirst? "navbar-mobile":""}`}>
             { props.mobileFirst ?
                 <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                    <a onClick={closeNav}>
+                    <link onClick={closeNav}>
                         <CloseIcon
                             sx={{ fontSize: "3rem" }}
                             className={"navbar-navigation-close"}
 
                         />
-                    </a>
+                    </link>
                 </div>  : null}
-            <a className={`col navbar-navigation-links ${props.mobileFirst ? "mobile-bottom-border" : null}`} href={"/dashboard"}>Dashboard</a>
-            <a className={`col navbar-navigation-links ${props.mobileFirst ? "mobile-bottom-border" : null}`} onClick={props.logoutUser} href={"/contact-us"}>Logout</a>
-            <a className={"col navbar-navigation-links"} href={"/login"}>
+            <Link className={`col navbar-navigation-links ${props.mobileFirst ? "mobile-bottom-border" : null}`} to={"/dashboard"}>Dashboard</Link>
+            <Link className={`col navbar-navigation-links ${props.mobileFirst ? "mobile-bottom-border" : null}`} onClick={props.logoutUser} to={"/contact-us"}>Logout</Link>
+            <Link className={"col navbar-navigation-links"} to={"/login"}>
                 <button className={" btn navbar-navigation-create-account-btn"}>
                     Login
                 </button>
-            </a>
+            </Link>
         </div>
     )
 }
