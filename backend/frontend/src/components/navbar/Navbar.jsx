@@ -5,12 +5,18 @@ import {useMediaQuery} from "react-responsive";
 import Create from '@mui/icons-material/Create';
 import NavbarAddons from "./navbar_addons/NavbarAddons";
 import MenuIcon from '@mui/icons-material/Menu';
-import AuthContext from "../../context/AuthContext";
-import authContext from "../../context/AuthContext";
+import {useSelector, useDispatch} from "react-redux"
+import {logout} from "../../services/slices/UserAthenticationSlice"
+
 
 function Navbar(){
 
-    const {logoutUser} = useContext(authContext)
+    const user = useSelector(state => state.auth.user)
+    const isAuthenticated = !!user
+
+    const dispatch = useDispatch();
+    const logoutUser = () => dispatch(logout)
+
 
     const isMobile = useMediaQuery({query: '(max-width: 767px)'});
     const [mobileMenu, setMobileMenu] = useState(false)
@@ -32,7 +38,10 @@ function Navbar(){
                 </Link>
                 {isMobile ? (
                     <>
-                        <MenuIcon onClick={toggleMobileMenu} />
+                        <MenuIcon
+                            onClick={toggleMobileMenu}
+                            isAuthenticated={isAuthenticated}
+                        />
                         {mobileMenu ? <NavbarAddons logoutUser={logoutUser} toggleMobileMenu={toggleMobileMenu} mobileFirst={true}/> : null}
                     </>
                 ) : (

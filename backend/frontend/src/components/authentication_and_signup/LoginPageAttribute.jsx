@@ -3,19 +3,20 @@ import "./sign_up_form.css";
 import {useMediaQuery} from "react-responsive";
 import AuthenticationImage from "./authentication_components/AuthenticationImage";
 import LoginForm from "./authentication_components/LoginForm"
-import AuthContext from "../../context/AuthContext";
-
+import {loginUser} from "../../services/slices/UserAthenticationSlice";
+import { useDispatch } from "react-redux";
+import { useNavigate } from 'react-router-dom';
 
 function LoginPageAttribute(){
-
+    const dispatch = useDispatch();
     const isMobile = useMediaQuery({query: '(max-width: 767px)'});
+    let navigate = useNavigate();
 
     const [userForm, setUserForm] = useState({
         email: "",
         password: "",
     })
 
-    let {loginUser} = useContext(AuthContext)
 
     function updateForm(event){
         const {name, value} = event.target
@@ -26,8 +27,10 @@ function LoginPageAttribute(){
 
    function submitForm(event){
         event.preventDefault()
-       console.log(userForm)
-        loginUser(userForm)
+        console.log(userForm)
+        dispatch(loginUser(userForm))
+        navigate("/")
+
     }
 
     return(

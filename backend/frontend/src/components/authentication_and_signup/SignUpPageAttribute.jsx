@@ -3,22 +3,24 @@ import "./sign_up_form.css";
 import {useMediaQuery} from "react-responsive";
 import AuthenticationImage from "./authentication_components/AuthenticationImage";
 import SignUpForm from "./authentication_components/SignUpForm";
-import {createAccount} from "../../services/CreateAccountApi";
-import AuthContext from "../../context/AuthContext";
+import {CreateAccount} from "../../services/CreateAccountApi";
 import {useNavigate} from "react-router-dom";
-
+import {useDispatch} from "react-redux";
+import { loginUser } from "../../services/slices/UserAthenticationSlice"
 
 
 function SignUpPageAttribute(){
 
     const isMobile = useMediaQuery({query: '(max-width: 767px)'});
 
-    const {loginUser} = useContext(AuthContext)
+    const dispatch = useDispatch()
+
     const navigate = useNavigate()
 
-    function submitForm(data){
+    async function submitForm(data){
         console.log(data)
-        createAccount(data, loginUser, navigate)
+        const userForm = await CreateAccount(data, navigate)
+        dispatch(loginUser(userForm))
     }
 
     return(

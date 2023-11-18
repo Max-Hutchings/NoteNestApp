@@ -1,0 +1,12 @@
+.section_col{
+    max-width: 300px;
+    padding: 0.4rem 0.4rem;
+    background: var(--dark);
+    border-radius: 0.5rem;
+    margin: 0.4rem 0.2rem;
+    height: fit-content;
+}
+
+.dashboard-sections-container{
+    margin: 0.5rem 3rem;
+}

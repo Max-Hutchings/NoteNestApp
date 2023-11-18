@@ -1,16 +1,25 @@
 // CreateAccountApi.jsx
+import { useSelector, useDispatch} from "react-redux";
 
 import axios from "axios";
 
-export async function createAccount(filledForm, loginUser, navigate) {
+export async function CreateAccount(filledForm, navigate) {
+
+
     try {
-        const response = await axios.post("http://127.0.0.1:8000/api/create-account/", {
-            first_name: filledForm.fName,
+        const form = {first_name: filledForm.fName,
             last_name: filledForm.lName,
             email: filledForm.email,
             date_of_birth: filledForm.dOB,
             password: filledForm.password1
-        })
+        }
+
+        console.log(form)
+
+        const response = await axios.post(
+            "http://127.0.0.1:8000/api/create-account/",
+            form
+            )
 
         console.log(response.data)
 
@@ -22,11 +31,14 @@ export async function createAccount(filledForm, loginUser, navigate) {
             localStorage.removeItem("access_token");
             localStorage.removeItem("refresh_token");
 
-            await loginUser(userForm);
+
             navigate("/dashboard");
+
+        return userForm
         }
 
     } catch (error) {
+
         console.log(error)
     }
 }

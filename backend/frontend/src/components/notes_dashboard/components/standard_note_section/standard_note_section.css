@@ -1,15 +1,15 @@
 .standard-note-section{
-    margin: 2rem 1rem;
+    /*margin: 2rem 1rem;*/
 
-    padding: 0.5rem 0.3rem;
-    width: 15rem;
+    /*padding: 0.5rem 0.3rem;*/
+    /*width: auto;*/
     justify-items: center;
-    border: 2px solid var(--dark);
+    /*border: 2px solid var(--dark);*/
 }
 
 .note-section-title{
     background-color: transparent;
-    width: 12rem;
+    /*width: 12rem;*/
 
     padding: 0.5rem 1rem;
     margin: 0.2rem 0;
@@ -19,10 +19,13 @@
 }
 
 .note-section-title-container{
+    display: flex;
+    flex-direction: row;
     background-color: var(--darkprimary);
-    width: 14rem;
+    /*width: 14rem;*/
     border-radius: 0.5rem;
     margin-bottom: 2px;
+    justify-content: space-between;
 }
 
 .note-section-title::placeholder{
@@ -38,10 +41,12 @@
 
 .note-section-note{
     background-color: var(--primary);
-    width: 13rem;
+    width: 100%;
     border-radius: 0.8rem;
 
     padding: 0 0;
+    padding-left: 0.4rem;
+    padding-right: 1rem;
     border: none;
     resize: none;
     overflow-y: hidden;
@@ -53,9 +58,10 @@
     background-color: var(--primary);
     border-radius: 0.8rem;
     padding: 0.5rem 0.2rem;
-    width: 14rem;
+    width: 16rem;
     margin: 0.1rem 0;
     gap: 2px;
+    justify-content: space-between;
 }
 
 

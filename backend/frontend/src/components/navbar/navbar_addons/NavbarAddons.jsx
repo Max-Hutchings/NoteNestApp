@@ -22,12 +22,16 @@ function NavbarAddons(props){
                     </link>
                 </div>  : null}
             <Link className={`col navbar-navigation-links ${props.mobileFirst ? "mobile-bottom-border" : null}`} to={"/dashboard"}>Dashboard</Link>
-            <Link className={`col navbar-navigation-links ${props.mobileFirst ? "mobile-bottom-border" : null}`} onClick={props.logoutUser} to={"/contact-us"}>Logout</Link>
-            <Link className={"col navbar-navigation-links"} to={"/login"}>
-                <button className={" btn navbar-navigation-create-account-btn"}>
-                    Login
-                </button>
-            </Link>
+            <Link className={`col navbar-navigation-links ${props.mobileFirst ? "mobile-bottom-border" : null}`} to={"/"} onClick={props.logoutUser} >Logout</Link>
+            {/*{props.isAuthenticated ?*/}
+                <Link className={"col navbar-navigation-links"} to={"/login"}>
+                    <button className={" btn navbar-navigation-create-account-btn"}>
+                        Login
+                    </button>
+                </Link>
+            {/*        :*/}
+            {/*        null*/}
+            {/*}*/}
         </div>
     )
 }

@@ -88,3 +88,41 @@ export async function deleteSectionAPI(token, sectionId){
         console.error("Coldnt delete section: ", error)
     }
 }
+
+export async function toggleCompleteNoteAPI(token, noteId){
+    try{
+        const response = await axios.put(`http://127.0.0.1:8000/api/complete-note/`,
+            {
+                "noteId": noteId
+            }, config(token))
+        const data = response.data
+        return data
+    }catch(error){
+        console.log("Failed to send complete note: ", error)
+    }
+}
+
+
+export async function clearCompletedTasksAPI(token){
+    try{
+        const response = await axios.post(`http://127.0.0.1:8000/api/clear-completed-tasks/`, {}, config(token))
+        const data = response.data
+        return data
+    }catch(error){
+        console.log("Failed to clear completed tasks: ", error)
+    }
+}
+
+
+
+export async function AssignNewNotePosition(token, notePositions){
+    try{
+        const response = await axios.put(
+            `http://127.0.0.1:8000/api/assign-new-note-position/`,
+            {"notePositions": notePositions},
+            config(token))
+        return response.data
+    }catch(error){
+        console.log("Failed to save new note position: ", error)
+    }
+}

@@ -21,4 +21,4 @@ class NoteSectionSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = NoteSection
-        fields = ["id", "title", "created_date", "title", "notes"]
+        fields = ["id", "title", "created_date", "title", "notes", "section_type"]

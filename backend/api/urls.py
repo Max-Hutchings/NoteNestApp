@@ -14,7 +14,10 @@ urlpatterns = [
     path("add-section-note/", AddUserNote.as_view()),
     path("delete-note/<noteId>", views.delete_note),
     path("delete-section/<sectionId>", views.delete_section),
-
+    path("complete-note/", views.complete_note),
+    path("clear-completed-tasks/", views.clear_completed_tasks),
+    path("update-note-position/", views.update_note_position),
+    path("assign-new-note-position/", views.assign_new_note_position),
 
 
     path('token/', MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
